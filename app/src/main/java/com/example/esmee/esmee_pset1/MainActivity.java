@@ -1,7 +1,7 @@
 package com.example.esmee.esmee_pset1;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
+//import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
@@ -53,18 +53,88 @@ public class MainActivity extends AppCompatActivity  {
         checkBoxNose = findViewById(R.id.checkBoxNose);
         checkBoxShoes = findViewById(R.id.checkBoxShoes);
         checkBoxArms = findViewById(R.id.checkBoxArms);
+
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putBoolean(checkBoxEyebrows, true);
+
+        if (checkBoxEyebrows.isChecked())
+            outState.putBoolean("eyebrows", true);
+
+        if (checkBoxEars.isChecked())
+            outState.putBoolean("ears", true);
+
+        if (checkBoxEyes.isChecked())
+            outState.putBoolean("eyes", true);
+
+        if (checkBoxGlasses.isChecked())
+            outState.putBoolean("glasses", true);
+
+        if (checkBoxHat.isChecked())
+            outState.putBoolean("hat", true);
+
+        if (checkBoxMouth.isChecked())
+            outState.putBoolean("mouth", true);
+
+        if (checkBoxMustache.isChecked())
+            outState.putBoolean("mustache", true);
+
+        if (checkBoxNose.isChecked())
+            outState.putBoolean("nose", true);
+
+        if (checkBoxShoes.isChecked())
+            outState.putBoolean("shoes", true);
+
+        if (checkBoxArms.isChecked())
+            outState.putBoolean("arms", true);
     }
 
     @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        boolean checkBoxEyebrows = savedInstanceState.getBoolean(checkBoxEyebrows);
+    public void onRestoreInstanceState(Bundle InState) {
+        super.onRestoreInstanceState(InState);
+
+        boolean eyebrowsBool = InState.getBoolean("eyebrows");
+        if (eyebrowsBool)
+            eyebrows.setVisibility(View.VISIBLE);
+
+        boolean earsBool = InState.getBoolean("ears");
+        if (earsBool)
+            ears.setVisibility(View.VISIBLE);
+
+        boolean eyesBool = InState.getBoolean("eyes");
+        if (eyesBool)
+            eyes.setVisibility(View.VISIBLE);
+
+        boolean glassesBool = InState.getBoolean("glasses");
+        if (glassesBool)
+            glasses.setVisibility(View.VISIBLE);
+
+        boolean hatBool = InState.getBoolean("hat");
+        if (hatBool)
+            hat.setVisibility(View.VISIBLE);
+
+        boolean mouthBool = InState.getBoolean("mouth");
+        if (mouthBool)
+            mouth.setVisibility(View.VISIBLE);
+
+        boolean mustacheBool = InState.getBoolean("mustache");
+        if (mustacheBool)
+            mustache.setVisibility(View.VISIBLE);
+
+        boolean noseBool = InState.getBoolean("nose");
+        if (noseBool)
+            nose.setVisibility(View.VISIBLE);
+
+        boolean shoesBool = InState.getBoolean("shoes");
+        if (shoesBool)
+            shoes.setVisibility(View.VISIBLE);
+
+        boolean armsBool = InState.getBoolean("arms");
+        if (armsBool)
+            arms.setVisibility(View.VISIBLE);
+
     }
 
     public void checkBoxEyebrowsClicked(View view) {
