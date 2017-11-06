@@ -8,7 +8,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="0.3">
 
         <ImageView
             android:id="@+id/body"
@@ -88,10 +88,10 @@
     </FrameLayout>
 
     <GridLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:columnCount="2">
+        android:columnCount="5">
 
         <CheckBox
             android:id="@+id/checkBoxHat"
